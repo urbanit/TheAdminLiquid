@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <!-- Path to the 'src' directory of an OrchardCore 4.0 (preview) source checkout. -->
+    <OrchardCoreSrc Condition="'$(OrchardCoreSrc)' == ''">$(MSBuildThisFileDirectory)..\OrchardCore\src\</OrchardCoreSrc>
+    <GenerateLocalizationCatalog>false</GenerateLocalizationCatalog>
+
+    <Title>The Admin Liquid theme</Title>
+    <Description>An Orchard Core admin theme rendering the markup of The Admin theme with Liquid templates, which can be cloned and customized as admin templates.</Description>
+    <Authors>Orchard Core Community and Contributors</Authors>
+    <Copyright>Orchard Core Community and Contributors</Copyright>
+    <PackageTags>OrchardCore OrchardCoreCMS Theme Liquid</PackageTags>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/urbanit/TheAdminLiquid</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore.Themes\TheAdmin\TheAdmin.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore.Modules\OrchardCore.Themes\OrchardCore.Themes.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.Admin.Abstractions\OrchardCore.Admin.Abstractions.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.AdminMenu.Abstractions\OrchardCore.AdminMenu.Abstractions.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.DisplayManagement\OrchardCore.DisplayManagement.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.DisplayManagement.Liquid\OrchardCore.DisplayManagement.Liquid.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.Liquid.Abstractions\OrchardCore.Liquid.Abstractions.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.Localization.Abstractions\OrchardCore.Localization.Abstractions.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.Navigation.Core\OrchardCore.Navigation.Core.csproj" />
+    <ProjectReference Include="$(OrchardCoreSrc)OrchardCore\OrchardCore.Theme.Targets\OrchardCore.Theme.Targets.csproj" />
+  </ItemGroup>
+
+</Project>
